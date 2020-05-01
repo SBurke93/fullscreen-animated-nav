@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body, html {
+    font-family: 'Montserrat';
+    margin: 0;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+header {
+    padding: 2em;
+
+    .logo {
+        color: black;
+        font-weight: bold;
+    }
+
+    .menu-btn {
+        width: 26px;
+        float: right;
+        cursor: pointer;
+    }
+}
+
+
+section {
+    padding: 4em;
+
+    h1 {
+        font-size: 4em;
+        margin: 1em auto;
+        width: 70%;
+
+        &::before {
+            content: ' ';
+            border-top: 6px solid rgb(200, 103, 103);
+            display: block;
+        }
+    }
+}
+
+
+
+nav {
+    position: absolute;
+    background: rgb(200, 103, 103);
+    padding: 2em;
+    width: calc(100% - 4em);
+    height: calc(100vh - 4em);
+    display: none;
+
+    .close-btn {
+        width: 26px;
+        float: right;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 10% auto 0 auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        width: 80%;
+
+        a {
+            color: white;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        span {
+            color: #242424;
+            display: block;
+            font-size: .75em;
+            margin-top: 20px;
+        }
+        li {
+
+        }
+    }
+}
+
+
+.show-menu {
+    display: block;
+    animation: slide-menu 1s ease-in forwards;
+
+}
+
+@keyframes slide-menu {
+    from {
+        transform: scaleY(0);
+    } 
+    to {
+        transform: scaleY(1);
+    }
+}
