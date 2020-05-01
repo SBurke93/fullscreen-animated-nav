@@ -24,7 +24,7 @@ header .menu-btn {
 }
 
 section {
-  padding: 4em;
+  padding: 7.15em 4em 4em 4em;
 }
 
 section h1 {
@@ -46,12 +46,17 @@ nav {
   width: calc(100% - 4em);
   height: calc(100vh - 4em);
   display: none;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
 nav .close-btn {
   width: 26px;
   float: right;
   cursor: pointer;
+  opacity: 0;
 }
 
 nav ul {
@@ -76,6 +81,11 @@ nav ul span {
   display: block;
   font-size: .75em;
   margin-top: 20px;
+  padding-right: 10px;
+}
+
+nav ul li {
+  opacity: 0;
 }
 
 .show-menu {
@@ -84,25 +94,94 @@ nav ul span {
           animation: slide-menu 1s ease-in forwards;
 }
 
+.show-menu .close-btn {
+  -webkit-animation: show-x 1s 1s forwards;
+          animation: show-x 1s 1s forwards;
+}
+
+.show-menu li:nth-of-type(1) {
+  -webkit-animation: menu-item-animation .5s forwards 1s ease-in-out;
+          animation: menu-item-animation .5s forwards 1s ease-in-out;
+}
+
+.show-menu li:nth-of-type(2) {
+  -webkit-animation: menu-item-animation .6s forwards 1.160s ease-in-out;
+          animation: menu-item-animation .6s forwards 1.160s ease-in-out;
+}
+
+.show-menu li:nth-of-type(3) {
+  -webkit-animation: menu-item-animation .6s forwards 1.320s ease-in-out;
+          animation: menu-item-animation .6s forwards 1.320s ease-in-out;
+}
+
+.show-menu li:nth-of-type(4) {
+  -webkit-animation: menu-item-animation .6s forwards 1.480s ease-in-out;
+          animation: menu-item-animation .6s forwards 1.480s ease-in-out;
+}
+
 @-webkit-keyframes slide-menu {
   from {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
   to {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 
 @keyframes slide-menu {
   from {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
   to {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes show-x {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show-x {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes menu-item-animation {
+  from {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-item-animation {
+  from {
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */

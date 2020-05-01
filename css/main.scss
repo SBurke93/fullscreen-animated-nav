@@ -28,7 +28,7 @@ header {
 
 
 section {
-    padding: 4em;
+    padding: 7.15em 4em 4em 4em;
 
     h1 {
         font-size: 4em;
@@ -52,11 +52,14 @@ nav {
     width: calc(100% - 4em);
     height: calc(100vh - 4em);
     display: none;
+    transform: scaleX(0);
+    transform-origin: right;
 
     .close-btn {
         width: 26px;
         float: right;
         cursor: pointer;
+        opacity: 0;
     }
 
     ul {
@@ -78,9 +81,10 @@ nav {
             display: block;
             font-size: .75em;
             margin-top: 20px;
+            padding-right: 10px;
         }
         li {
-
+            opacity: 0;
         }
     }
 }
@@ -90,13 +94,50 @@ nav {
     display: block;
     animation: slide-menu 1s ease-in forwards;
 
+    .close-btn {
+        animation: show-x 1s 1s forwards;
+    }
+
+    li:nth-of-type(1) {
+        animation: menu-item-animation .5s forwards 1s ease-in-out;
+    }
+    li:nth-of-type(2) {
+        animation: menu-item-animation .6s forwards 1.160s ease-in-out;
+    }
+    li:nth-of-type(3) {
+        animation: menu-item-animation .6s forwards 1.320s ease-in-out;
+    }
+    li:nth-of-type(4) {
+        animation: menu-item-animation .6s forwards 1.480s ease-in-out;
+    }
 }
+
+
 
 @keyframes slide-menu {
     from {
-        transform: scaleY(0);
+        transform: scaleX(0);
     } 
     to {
-        transform: scaleY(1);
+        transform: scaleX(1);
+    }
+}
+@keyframes show-x{
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menu-item-animation {
+    from {
+        transform: translateY(60%);
+        opacity: 0;
+    } 
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
